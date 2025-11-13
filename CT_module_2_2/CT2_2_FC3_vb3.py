@@ -4,7 +4,8 @@ from WaterII.adgo_water_lib import water
 # Alleen het de tekst hieronder kopieren naar sowiso variabele $adgo_water_lib
 # Onderstaande hekjes verwijderen om de code te activeren in sowiso. Behalve bij versie
 
-#Een keerwand heeft de volgende afmetingen
+# Wat is het gewicht (in kN) van het tunnelelement?
+# Hoe hoog drijft het tunnelelement boven de waterlijn, voordat de ballasttanks met water worden gevuld?
 
 #sw_Python("
 #versie 26-6-2025

@@ -4,7 +4,10 @@ from WaterII.adgo_water_lib import water
 # Alleen het de tekst hieronder kopieren naar sowiso variabele $adgo_water_lib
 # Onderstaande hekjes verwijderen om de code te activeren in sowiso. Behalve bij versie
 
-#Een keerwand heeft de volgende afmetingen
+# In de zomer staat het water in deze betonnen goot tot ‘het knikje’; in de winter loopt het waterpeil op tot het aangegeven peil (25 centimeter hoger).
+# Bereken de hydraulische straal ‘R’ in de zomer
+# Bereken de hydraulische straal ‘R’ in de winter
+
 
 #sw_Python("
 #versie 26-6-2025

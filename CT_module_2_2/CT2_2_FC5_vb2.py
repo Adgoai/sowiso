@@ -4,7 +4,12 @@ from WaterII.adgo_water_lib import water
 # Alleen het de tekst hieronder kopieren naar sowiso variabele $adgo_water_lib
 # Onderstaande hekjes verwijderen om de code te activeren in sowiso. Behalve bij versie
 
-#Een keerwand heeft de volgende afmetingen
+#Water stroomt met een constante snelheid van 0,5m/s van een smalle watergang naar een brede zandvang een schematisch bovenaanzicht van de situatie en 2 schematische dwarsprofielen zijn hierboven gegeven
+# a. Bepaal het getal van Reynolds ‘Rew’ ter plaatse van de instromende watergang
+# b. Bepaal het debiet in de zandvang
+# c. Bepaal het getal van Reynolds ‘Rew’ ter plaatse van de zandvang
+# d. Geef aan waar spraken is van turbulente stroming en waar van laminaire stroming
+# e. Verklaar de term ‘zandvang’ op basis van de bovenstaande antwoorden
 
 #sw_Python("
 #versie 26-6-2025
