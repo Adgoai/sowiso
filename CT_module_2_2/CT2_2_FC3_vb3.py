@@ -1,5 +1,6 @@
 from adgo_lib import kies_integer_getal_stap, kies_getal_tussen, kies_getal_stap
 from WaterII.adgo_water_lib import water
+import numpy as np
 
 # Alleen het de tekst hieronder kopieren naar sowiso variabele $adgo_water_lib
 # Onderstaande hekjes verwijderen om de code te activeren in sowiso. Behalve bij versie
@@ -8,29 +9,42 @@ from WaterII.adgo_water_lib import water
 # Hoe hoog drijft het tunnelelement boven de waterlijn, voordat de ballasttanks met water worden gevuld?
 
 #sw_Python("
-#versie 26-6-2025
+#versie 19-11-2025
 #$adgo_lib
 #$adgo_water_lib
 
 decimalen = 2
 print(decimalen) # [0]
 
-dichtheid_water = water.sgzoet
+dichtheid_water = 1000
 print(dichtheid_water) # [1]
 
 dichtheid_beton = 2500
 print(dichtheid_beton) # [2]
 
-wanddikte = kies_getal_stap(1.0, 1.6, 0.10, decimalen)
-
 breedte_uitw = kies_getal_stap(8.0, 15.5, 0.5, decimalen)
 print(breedte_uitw) # [3]
 
-breedte_inw = breedte_uitw - 2 * wanddikte
-print(round(breedte_inw, decimalen)) # [4]
-
 hoogte_uitw = kies_getal_stap(5, 8.5, 0.5, decimalen)
-print(hoogte_uitw) # [5]
+print(hoogte_uitw) # [4]
+
+randje = kies_getal_stap(0.2, 0.9, 0.1, decimalen)
+
+h = hoogte_uitw - randje
+O = breedte_uitw * h / 2.5
+a = 4
+b =(2 * breedte_uitw + 2 * hoogte_uitw)
+c = O
+
+# bereken x met numpy ax^x - bx + c = 0
+x = np.roots([-a, b, -c])
+x = min(x[x > 0])
+x = round(x, 1)
+
+wanddikte = x
+
+breedte_inw = breedte_uitw - 2 * wanddikte
+print(round(breedte_inw, decimalen)) # [5]
 
 hoogte_inw = hoogte_uitw - 2 * wanddikte
 print(round(hoogte_inw, decimalen)) # [6]
@@ -49,7 +63,7 @@ print(round(gewicht_beton, 0)) # [8]
 druk_onderzijde = (gewicht_beton * 1000) / (lengte * breedte_uitw)  # in Pa
 print(round(druk_onderzijde, decimalen)) # [9]
 
-diepte = druk_onderzijde / (dichtheid_beton * water.g)  # in m
+diepte = druk_onderzijde / (water.sgzoet * water.g)  # in m
 print(round(diepte, decimalen)) # [10]
 
 rand = hoogte_uitw - diepte

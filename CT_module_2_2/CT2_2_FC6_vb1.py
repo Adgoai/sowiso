@@ -73,15 +73,15 @@ print(round(laagje, decimalen)) # [9] (mm)
 # e. Bepaal de Chézy waarde in de situatie van voorbeeld 1a
 
 if kwaarde > 6 * laagje:
-    print('hydraulisch ruw') # [10]
+    print(1) # [10] hydraulisch ruw
     C_waarde = 18 * np.log10((12 * R_zomer) / (kwaarde / 1000))
     print(round(C_waarde, decimalen))  # [11]
 elif laagje > 4 * kwaarde:
-    print('hydraulisch glad') # [10]
+    print(2) # [10] hydraulisch glad
     C_waarde = 18 * np.log10((48 * R_zomer) / (laagje / 1000))
     print(round(C_waarde, decimalen))  # [11]
 else:
-    print('overgangsgebied')  #[10]
+    print(3)  #[10] overgangsgebied
     C_waarde = 18 * np.log10((12 * R_zomer) / ((kwaarde / 1000) + (0.25 * (laagje / 1000))))
     print(round(C_waarde, decimalen))  # [11]
 
