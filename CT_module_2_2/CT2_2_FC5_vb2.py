@@ -39,7 +39,7 @@ print(kine_visco) # [6]
 
 # vraag a
 A_1 = (bodem_1 + diepte) * diepte
-O_1 = (2 * diepte)**2 + bodem_1
+O_1 = 2 * diepte * 2**0.5 + bodem_1
 R_1 = A_1/O_1
 print(round(R_1, decimalen)) # [7]
 
@@ -52,7 +52,7 @@ print(round(debiet, decimalen)) # [9]
 
 # vraag c
 A_2 = (bodem_2 + diepte) * diepte
-O_2 = (2 * diepte)**2 + bodem_2
+O_2 = 2 * diepte * 2**0.5 + bodem_2
 R_2 = A_2 / O_2
 print(round(R_2, decimalen)) # [10]
 
